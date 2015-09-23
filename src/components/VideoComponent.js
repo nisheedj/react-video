@@ -4,9 +4,9 @@ var VideoComponent = React.createClass({
 
     render: function() {
         return (
-            <div className="rv-video">
-				<video />
-			</div>
+          <div className="rv-video">
+				    <video />
+		      </div>
         );
     }
 

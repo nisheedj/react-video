@@ -1,8 +1,7 @@
 var ClassNames = require('classnames');
 var React = require('react');
 var VideoComponent = require('./components/VideoComponent');
-var VideoProgress = require('./components/VideoProgress');
-var VideoControls = require('./components/VideoControls');
+var VideoBottom = require('./components/VideoBottom');
 
 var ReactVideo = React.createClass({
     getDefaultProps: function() {
@@ -21,10 +20,9 @@ var ReactVideo = React.createClass({
         var reactVideoClasses = ClassNames('rv-wrapper', this.props.customClass);
         return (
             <div className={reactVideoClasses}> 
-				<VideoComponent {...this.props}/>
-				<VideoProgress {...this.props}/>
-				<VideoControls {...this.props}/>
-			</div>
+                <VideoComponent ref="test" {...this.props}/>
+                <VideoBottom {...this.props}/>
+            </div>
         );
     }
 
