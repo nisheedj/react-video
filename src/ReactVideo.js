@@ -1,31 +1,22 @@
-var ClassNames = require('classnames');
-var React = require('react');
-var VideoComponent = require('./components/VideoComponent');
-var VideoBottom = require('./components/VideoBottom');
+import ClassNames from 'classnames';
+import React from 'react';
+import Video from './components/Video';
+import VideoControl from './components/VideoControl';
 
-var ReactVideo = React.createClass({
-    getDefaultProps: function() {
-        return {
-            source: '',
-            autoPlay: false,
-            showControls: true,
-            responsive: false,
-            width: 300,
-            height: 200,
-            customClass: '',
-            relatedVideos: []
-        };
-    },
-    render: function() {
-        var reactVideoClasses = ClassNames('rv-wrapper', this.props.customClass);
-        return (
-            <div className={reactVideoClasses}> 
-                <VideoComponent ref="test" {...this.props}/>
-                <VideoBottom {...this.props}/>
-            </div>
-        );
-    }
+export default class ReactVideo extends React.Component {
+  render() {
+    let classes = ClassNames('rv-video', this.props.classes);
+    return (
+      <div className={classes}>
+        <Video/>
+        <VideoControl/>
+      </div>
+    );
+  }
+}
 
-});
-
-module.exports = ReactVideo;
+ReactVideo.defaultProps = {
+  classes: [],
+  sources: [],
+  video: {}
+};

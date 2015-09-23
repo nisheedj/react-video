@@ -1,1 +1,1 @@
-module.exports = window.React;
+export default window.React;

@@ -14,41 +14,41 @@ var mainfile = 'ReactVideo.js';
 
 /*Clean distribution folder*/
 gulp.task('clean', function(cb) {
-	return del(['./dist/**/*.*'], cb);
+  return del(['./dist/**/*.*'], cb);
 });
 /*JSX hint*/
-gulp.task('jshint', function() {
-	return gulp.src([path.join('src', '**', '*.js')])
-		.pipe(jshint({
-			linter: jsxhint.JSXHINT,
-			esnext: true
-		}))
-		.pipe(jshint.reporter(stylish))
-		.pipe(jshint.reporter('fail'));
+gulp.task('jshint', ['clean'], function() {
+  return gulp.src([path.join('src', '**', '*.js')])
+    .pipe(jshint({
+      linter: jsxhint.JSXHINT,
+      esnext: true
+    }))
+    .pipe(jshint.reporter(stylish))
+    .pipe(jshint.reporter('fail'));
 });
 /*Build JS*/
-gulp.task('build-js', ['clean'], function() {
-	return browserify({
-			entries: path.join('src', mainfile),
-			standalone: 'ReactVideo'
-		})
-		.transform(babelify)
-		.bundle()
-		.pipe(source(mainfile))
-		.pipe(rename({
-			basename: 'react-video'
-		}))
-		.pipe(gulp.dest(path.join('dist', 'js')));
+gulp.task('build-js', ['jshint'], function() {
+  return browserify({
+      entries: path.join('src', mainfile),
+      standalone: 'ReactVideo'
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source(mainfile))
+    .pipe(rename({
+      basename: 'react-video'
+    }))
+    .pipe(gulp.dest(path.join('dist', 'js')));
 });
 /*Minify JS*/
 gulp.task('mini-js', ['build-js'], function() {
-	return gulp.src([path.join('dist', 'js', '*.js')])
-		.pipe(rename({
-			basename: 'react-video',
-			suffix: '.min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest(path.join('dist', 'js')));
+  return gulp.src([path.join('dist', 'js', '*.js')])
+    .pipe(rename({
+      basename: 'react-video',
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest(path.join('dist', 'js')));
 });
 /*Default Task*/
 gulp.task('default', ['mini-js']);

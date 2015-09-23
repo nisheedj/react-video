@@ -1,13 +1,14 @@
-var React = require('react');
+import React from 'react';
+import Controls from './Controls';
+import Progress from './Progress';
 
-var VideoControl = React.createClass({
-
-    render: function() {
-        return (
-            <div className="rv-control"/>
-        );
-    }
-
-});
-
-module.exports = VideoControl;
+export default class VideoControl extends React.Component {
+  render() {
+    return (
+      <div className="rv-control-group">
+        <Progress/>
+        <Controls/>
+      </div>
+    );
+  }
+}

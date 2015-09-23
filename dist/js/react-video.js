@@ -52,121 +52,263 @@
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var ClassNames = require('classnames');
-var React = require('react');
-var VideoComponent = require('./components/VideoComponent');
-var VideoBottom = require('./components/VideoBottom');
-
-var ReactVideo = React.createClass({
-    displayName: 'ReactVideo',
-
-    getDefaultProps: function getDefaultProps() {
-        return {
-            source: '',
-            autoPlay: false,
-            showControls: true,
-            responsive: false,
-            width: 300,
-            height: 200,
-            customClass: '',
-            relatedVideos: []
-        };
-    },
-    render: function render() {
-        var reactVideoClasses = ClassNames('rv-wrapper', this.props.customClass);
-        return React.createElement(
-            'div',
-            { className: reactVideoClasses },
-            React.createElement(VideoComponent, _extends({ ref: 'test' }, this.props)),
-            React.createElement(VideoBottom, this.props)
-        );
-    }
-
+Object.defineProperty(exports, '__esModule', {
+  value: true
 });
 
-module.exports = ReactVideo;
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-},{"./components/VideoBottom":3,"./components/VideoComponent":4,"classnames":1,"react":7}],3:[function(require,module,exports){
-'use strict';
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-var React = require('react');
-var VideoControl = require('./VideoControl');
-var VideoProgress = require('./VideoProgress');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var VideoBottom = React.createClass({
-  displayName: 'VideoBottom',
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  render: function render() {
-    return React.createElement(
-      'div',
-      { className: 'rv-bottom' },
-      React.createElement(VideoProgress, this.props),
-      React.createElement(VideoControl, this.props)
-    );
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _componentsVideo = require('./components/Video');
+
+var _componentsVideo2 = _interopRequireDefault(_componentsVideo);
+
+var _componentsVideoControl = require('./components/VideoControl');
+
+var _componentsVideoControl2 = _interopRequireDefault(_componentsVideoControl);
+
+var ReactVideo = (function (_React$Component) {
+  _inherits(ReactVideo, _React$Component);
+
+  function ReactVideo() {
+    _classCallCheck(this, ReactVideo);
+
+    _get(Object.getPrototypeOf(ReactVideo.prototype), 'constructor', this).apply(this, arguments);
   }
 
-});
+  _createClass(ReactVideo, [{
+    key: 'render',
+    value: function render() {
+      var classes = (0, _classnames2['default'])('rv-video', this.props.classes);
+      return _react2['default'].createElement(
+        'div',
+        { className: classes },
+        _react2['default'].createElement(_componentsVideo2['default'], null),
+        _react2['default'].createElement(_componentsVideoControl2['default'], null)
+      );
+    }
+  }]);
 
-module.exports = VideoBottom;
+  return ReactVideo;
+})(_react2['default'].Component);
 
-},{"./VideoControl":5,"./VideoProgress":6,"react":7}],4:[function(require,module,exports){
+exports['default'] = ReactVideo;
+
+ReactVideo.defaultProps = {
+  classes: [],
+  sources: [],
+  video: {}
+};
+module.exports = exports['default'];
+
+},{"./components/Video":5,"./components/VideoControl":6,"classnames":1,"react":7}],3:[function(require,module,exports){
 "use strict";
 
-var React = require('react');
-
-var VideoComponent = React.createClass({
-    displayName: "VideoComponent",
-
-    render: function render() {
-        return React.createElement(
-            "div",
-            { className: "rv-video" },
-            React.createElement("video", null)
-        );
-    }
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
-module.exports = VideoComponent;
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var VideoControl = (function (_React$Component) {
+  _inherits(VideoControl, _React$Component);
+
+  function VideoControl() {
+    _classCallCheck(this, VideoControl);
+
+    _get(Object.getPrototypeOf(VideoControl.prototype), "constructor", this).apply(this, arguments);
+  }
+
+  _createClass(VideoControl, [{
+    key: "render",
+    value: function render() {
+      return _react2["default"].createElement("div", { className: "rv-control-group__controls" });
+    }
+  }]);
+
+  return VideoControl;
+})(_react2["default"].Component);
+
+exports["default"] = VideoControl;
+module.exports = exports["default"];
+
+},{"react":7}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var VideoProgress = (function (_React$Component) {
+  _inherits(VideoProgress, _React$Component);
+
+  function VideoProgress() {
+    _classCallCheck(this, VideoProgress);
+
+    _get(Object.getPrototypeOf(VideoProgress.prototype), "constructor", this).apply(this, arguments);
+  }
+
+  _createClass(VideoProgress, [{
+    key: "render",
+    value: function render() {
+      return _react2["default"].createElement("div", { className: "rv-control-group__progress" });
+    }
+  }]);
+
+  return VideoProgress;
+})(_react2["default"].Component);
+
+exports["default"] = VideoProgress;
+module.exports = exports["default"];
 
 },{"react":7}],5:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var React = require('react');
-
-var VideoControl = React.createClass({
-    displayName: "VideoControl",
-
-    render: function render() {
-        return React.createElement("div", { className: "rv-control" });
-    }
-
+Object.defineProperty(exports, '__esModule', {
+  value: true
 });
 
-module.exports = VideoControl;
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var Video = (function (_React$Component) {
+  _inherits(Video, _React$Component);
+
+  function Video() {
+    _classCallCheck(this, Video);
+
+    _get(Object.getPrototypeOf(Video.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(Video, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement('div', null);
+    }
+  }]);
+
+  return Video;
+})(_react2['default'].Component);
+
+exports['default'] = Video;
+module.exports = exports['default'];
 
 },{"react":7}],6:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var React = require('react');
-
-var VideoProgress = React.createClass({
-	displayName: "VideoProgress",
-
-	render: function render() {
-		return React.createElement("div", { className: "rv-progress" });
-	}
-
+Object.defineProperty(exports, '__esModule', {
+  value: true
 });
 
-module.exports = VideoProgress;
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-},{"react":7}],7:[function(require,module,exports){
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Controls = require('./Controls');
+
+var _Controls2 = _interopRequireDefault(_Controls);
+
+var _Progress = require('./Progress');
+
+var _Progress2 = _interopRequireDefault(_Progress);
+
+var VideoControl = (function (_React$Component) {
+  _inherits(VideoControl, _React$Component);
+
+  function VideoControl() {
+    _classCallCheck(this, VideoControl);
+
+    _get(Object.getPrototypeOf(VideoControl.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(VideoControl, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        { className: 'rv-control-group' },
+        _react2['default'].createElement(_Progress2['default'], null),
+        _react2['default'].createElement(_Controls2['default'], null)
+      );
+    }
+  }]);
+
+  return VideoControl;
+})(_react2['default'].Component);
+
+exports['default'] = VideoControl;
+module.exports = exports['default'];
+
+},{"./Controls":3,"./Progress":4,"react":7}],7:[function(require,module,exports){
 "use strict";
 
-module.exports = window.React;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = window.React;
+module.exports = exports["default"];
 
 },{}]},{},[2])(2)
 });
