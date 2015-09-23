@@ -137,26 +137,26 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var VideoControl = (function (_React$Component) {
-  _inherits(VideoControl, _React$Component);
+var Controls = (function (_React$Component) {
+  _inherits(Controls, _React$Component);
 
-  function VideoControl() {
-    _classCallCheck(this, VideoControl);
+  function Controls() {
+    _classCallCheck(this, Controls);
 
-    _get(Object.getPrototypeOf(VideoControl.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Controls.prototype), "constructor", this).apply(this, arguments);
   }
 
-  _createClass(VideoControl, [{
+  _createClass(Controls, [{
     key: "render",
     value: function render() {
-      return _react2["default"].createElement("div", { className: "rv-control-group__controls" });
+      return _react2["default"].createElement("div", { className: "rv-control" });
     }
   }]);
 
-  return VideoControl;
+  return Controls;
 })(_react2["default"].Component);
 
-exports["default"] = VideoControl;
+exports["default"] = Controls;
 module.exports = exports["default"];
 
 },{"react":7}],4:[function(require,module,exports){
@@ -180,26 +180,26 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var VideoProgress = (function (_React$Component) {
-  _inherits(VideoProgress, _React$Component);
+var Progress = (function (_React$Component) {
+  _inherits(Progress, _React$Component);
 
-  function VideoProgress() {
-    _classCallCheck(this, VideoProgress);
+  function Progress() {
+    _classCallCheck(this, Progress);
 
-    _get(Object.getPrototypeOf(VideoProgress.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Progress.prototype), "constructor", this).apply(this, arguments);
   }
 
-  _createClass(VideoProgress, [{
+  _createClass(Progress, [{
     key: "render",
     value: function render() {
-      return _react2["default"].createElement("div", { className: "rv-control-group__progress" });
+      return _react2["default"].createElement("div", { className: "rv-progress" });
     }
   }]);
 
-  return VideoProgress;
+  return Progress;
 })(_react2["default"].Component);
 
-exports["default"] = VideoProgress;
+exports["default"] = Progress;
 module.exports = exports["default"];
 
 },{"react":7}],5:[function(require,module,exports){
@@ -288,7 +288,7 @@ var VideoControl = (function (_React$Component) {
     value: function render() {
       return _react2['default'].createElement(
         'div',
-        { className: 'rv-control-group' },
+        { className: 'rv-controls' },
         _react2['default'].createElement(_Progress2['default'], null),
         _react2['default'].createElement(_Controls2['default'], null)
       );

@@ -18,7 +18,7 @@ gulp.task('clean', function(cb) {
 });
 /*JSX hint*/
 gulp.task('jshint', ['clean'], function() {
-  return gulp.src([path.join('src', '**', '*.js')])
+  return gulp.src([path.join('src', 'js', '**', '*.js')])
     .pipe(jshint({
       linter: jsxhint.JSXHINT,
       esnext: true
@@ -29,7 +29,7 @@ gulp.task('jshint', ['clean'], function() {
 /*Build JS*/
 gulp.task('build-js', ['jshint'], function() {
   return browserify({
-      entries: path.join('src', mainfile),
+      entries: path.join('src', 'js', mainfile),
       standalone: 'ReactVideo'
     })
     .transform(babelify)
