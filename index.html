@@ -9,7 +9,6 @@
         <title>React Video</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" type="text/css" href="dist/css/react-video-player.css">
     </head>
@@ -19,10 +18,11 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+        <script type="text/javascript" src="node_modules/react/dist/react-with-addons.js"></script>
         <script type="text/javascript" src="dist/js/react-video-player.js"></script>
-        <script type="text/jsx">
-        	React.render(<ReactVideoPlayer/>,document.body);
+        <script>
+        	//React.render(<ReactVideoPlayer/>,document.body);
+            React.render(React.createElement(ReactVideoPlayer, { name: "John" }), document.body);
         </script>
     </body>
 </html>

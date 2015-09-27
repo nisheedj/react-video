@@ -1,9 +1,0 @@
-import React from 'react';
-
-export default class ProgressControl extends React.Component {
-  render() {
-    return (
-      <div className="rv-progress"></div>
-    );
-  }
-}

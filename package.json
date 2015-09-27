@@ -34,6 +34,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "browser": {
-    "react": "./src/js/shims/react-fake.js"
+    "react/addons": "./src/js/shims/react-fake.js"
   }
 }

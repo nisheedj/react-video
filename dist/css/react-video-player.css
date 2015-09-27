@@ -2,7 +2,9 @@
   width: 640px;
   height: 360px;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF; }
   @media screen and (max-width: 656px) {
     .rvp {
       width: 426px;
@@ -11,6 +13,11 @@
     .rvp {
       width: 854px;
       height: 480px; } }
+  @media screen and (min-height: 980px) and (min-width: 1720px) {
+    .rvp {
+      width: 1280px;
+      height: 720px; } }
+  .rvp-inner,
   .rvp-video {
     position: absolute;
     top: 0;
@@ -19,13 +26,20 @@
     bottom: 0;
     z-index: 0;
     background-color: #000000; }
+  .rvp--show-controls .rvp-gradient {
+    opacity: 1;
+    bottom: 0; }
+  .rvp--show-controls .rvp-control {
+    bottom: 0; }
   .rvp-gradient {
     width: 100%;
     height: 98px;
     position: absolute;
-    bottom: 0;
+    bottom: -98px;
     z-index: 1;
-    background: url("../img/gradient.png") repeat-x left bottom; }
+    background: url("../img/gradient.png") repeat-x left bottom;
+    opacity: 0.01;
+    transition: all 0.3s ease-in; }
   .rvp-progress {
     width: 100%;
     height: 36px;
@@ -35,3 +49,26 @@
     line-height: 36px;
     text-align: left;
     direction: ltr; }
+  .rvp-control {
+    width: 100%;
+    height: 36px;
+    position: absolute;
+    bottom: -36px;
+    z-index: 3;
+    line-height: 36px;
+    text-align: left;
+    direction: ltr;
+    transition: all 0.3s ease-in; }
+  .rvp-time {
+    display: inline-block; }
+    .rvp-time__current,
+    .rvp-time__duration {
+      display: inline-block;
+      position: relative; }
+    .rvp-time__current:after {
+      content: '/'; }
+  .rvp-appear {
+    opacity: 0.01;
+    transition: opacity 0.3s ease-in; }
+    .rvp-appear.rvp-appear-active {
+      opacity: 1; }
